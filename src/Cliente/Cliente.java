@@ -22,10 +22,13 @@ public class Cliente {
                     if (linha == null) break;
 
                     if (linha.startsWith("/file")) {
-                        String[] partes = linha.split(" ", 4);
-                        String remetente = partes[1];
-                        String nomeArquivo = partes[2];
-                        long tamanho = Long.parseLong(partes[3]);
+                        int primeiraAspa = linha.indexOf('"');
+                        int segundaAspa = linha.indexOf('"', primeiraAspa + 1);
+
+                        String remetente = linha.split(" ")[1];
+                        String nomeArquivo = linha.substring(primeiraAspa + 1, segundaAspa);
+                        String resto = linha.substring(segundaAspa + 1).trim();
+                        long tamanho = Long.parseLong(resto);
 
                         FileOutputStream fos = new FileOutputStream(nomeArquivo);
 
@@ -39,7 +42,8 @@ public class Cliente {
                         }
                         fos.close();
                         System.out.println("Arquivo '" + nomeArquivo + "' recebido de " + remetente);
-                    } else {
+                    }
+                    else {
                         System.out.println(linha);
                     }
                 }

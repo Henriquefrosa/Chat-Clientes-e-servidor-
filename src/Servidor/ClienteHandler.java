@@ -92,7 +92,8 @@ class ClienteHandler extends Thread {
         ClienteHandler handler = Servidor.getCliente(destino);
         if (handler != null) {
             // Envia metadados
-            handler.saida.println("/file " + nome + " " + file.getName() + " " + file.length());
+            handler.saida.println("/file " + nome + " \"" + file.getName() + "\" " + file.length());
+
 
             // Envia arquivo
             byte[] buffer = new byte[4096];

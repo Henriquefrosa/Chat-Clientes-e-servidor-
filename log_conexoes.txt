@@ -6,3 +6,9 @@ Usuário: Henrique | IP: 127.0.0.1 | Data: 2025-04-27 00:03:02
 Usuário: Roger | IP: 127.0.0.1 | Data: 2025-04-27 00:03:10
 Usuário: Henrique | IP: 127.0.0.1 | Data: 2025-04-27 00:06:26
 Usuário: Roger | IP: 127.0.0.1 | Data: 2025-04-27 00:06:34
+Usuário: Henrique | IP: 127.0.0.1 | Data: 2025-04-27 00:08:48
+Usuário: Roger | IP: 127.0.0.1 | Data: 2025-04-27 00:08:54
+Usuário: Henrique | IP: 127.0.0.1 | Data: 2025-04-27 00:12:42
+Usuário: Roger | IP: 127.0.0.1 | Data: 2025-04-27 00:12:47
+Usuário: Henrique | IP: 127.0.0.1 | Data: 2025-04-27 00:16:26
+Usuário: Roger | IP: 127.0.0.1 | Data: 2025-04-27 00:16:31
