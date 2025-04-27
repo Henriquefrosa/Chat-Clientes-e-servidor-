@@ -4,7 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0bb010c5-80cb-4a9f-9d74-3aed8e6f02c0" name="Changes" comment="" />
+    <list default="true" id="0bb010c5-80cb-4a9f-9d74-3aed8e6f02c0" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Servidor/ClienteHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/log_conexoes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/log_conexoes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/teste2/Cliente.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/teste2/ClienteHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/teste2/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/teste2/Servidor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cliente/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Servidor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servidor/Servidor.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,14 +53,14 @@
 }]]></component>
   <component name="RunManager" selected="Application.Cliente">
     <configuration name="Cliente" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Cliente" />
+      <option name="MAIN_CLASS_NAME" value="Cliente.Cliente" />
       <module name="teste2" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <configuration name="Servidor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Servidor" />
+      <option name="MAIN_CLASS_NAME" value="Servidor.Servidor" />
       <module name="teste2" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -75,16 +86,5 @@
       <updated>1745628644275</updated>
     </task>
     <servers />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Main.java</url>
-          <line>4</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

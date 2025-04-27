@@ -1,39 +1,9 @@
+package Servidor;
 
 import java.io.*;
-import java.net.*;
+import java.net.Socket;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
-
-public class Servidor {
-    private static Map<String, ClienteHandler> clientes = new HashMap<>();
-
-    public static void main(String[] args) throws IOException {
-        ServerSocket serverSocket = new ServerSocket(12345);
-        System.out.println("Servidor rodando na porta 12345...");
-
-        while (true) {
-            Socket socket = serverSocket.accept();
-            new ClienteHandler(socket).start();
-        }
-    }
-
-    public static synchronized void registrarCliente(String nome, ClienteHandler handler) {
-        clientes.put(nome, handler);
-    }
-
-    public static synchronized void removerCliente(String nome) {
-        clientes.remove(nome);
-    }
-
-    public static synchronized Set<String> listarClientes() {
-        return clientes.keySet();
-    }
-
-    public static synchronized ClienteHandler getCliente(String nome) {
-        return clientes.get(nome);
-    }
-}
 
 class ClienteHandler extends Thread {
     private Socket socket;
@@ -104,25 +74,27 @@ class ClienteHandler extends Thread {
     }
 
     private void tratarArquivo(String linha) throws IOException {
-        String[] partes = linha.split(" ", 4);
+        String[] partes = linha.split(" ", 4); // <<<< 4 aqui
         if (partes.length < 4) {
-            saida.println("Formato: /send file <destinatario> <caminho_arquivo>");
+            saida.println("Formato correto: /send file <destinatario> <caminho_arquivo>");
             return;
         }
-        String destino = partes[2];
-        String caminho = partes[3];
+
+        String destino = partes[2]; // <<<< 2
+        String caminho = partes[3]; // <<<< 3
 
         File file = new File(caminho);
         if (!file.exists()) {
-            saida.println("Arquivo não encontrado.");
+            saida.println("Arquivo não encontrado: " + caminho);
             return;
         }
 
         ClienteHandler handler = Servidor.getCliente(destino);
         if (handler != null) {
-            // Envia metadados e conteúdo do arquivo
+            // Envia metadados
             handler.saida.println("/file " + nome + " " + file.getName() + " " + file.length());
 
+            // Envia arquivo
             byte[] buffer = new byte[4096];
             OutputStream out = handler.socket.getOutputStream();
             InputStream in = new FileInputStream(file);

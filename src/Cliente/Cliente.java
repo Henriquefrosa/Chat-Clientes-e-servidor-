@@ -1,3 +1,5 @@
+package Cliente;
+
 import java.io.*;
 import java.net.Socket;
 import java.util.Scanner;
@@ -10,24 +12,27 @@ public class Cliente {
         BufferedReader entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         PrintWriter saida = new PrintWriter(socket.getOutputStream(), true);
 
+        InputStream in = socket.getInputStream();  // Já pega o input stream uma vez.
+
         // Thread para receber mensagens
         new Thread(() -> {
             try {
-                String linha;
-                while ((linha = entrada.readLine()) != null) {
+                while (true) {
+                    String linha = entrada.readLine();
+                    if (linha == null) break;
+
                     if (linha.startsWith("/file")) {
-                        String[] partes = linha.split(" ");
+                        String[] partes = linha.split(" ", 4);
                         String remetente = partes[1];
                         String nomeArquivo = partes[2];
                         long tamanho = Long.parseLong(partes[3]);
 
                         FileOutputStream fos = new FileOutputStream(nomeArquivo);
-                        InputStream in = socket.getInputStream();
 
                         byte[] buffer = new byte[4096];
-                        int total = 0;
+                        long total = 0;
                         while (total < tamanho) {
-                            int count = in.read(buffer);
+                            int count = in.read(buffer, 0, (int)Math.min(buffer.length, tamanho - total));
                             if (count == -1) break;
                             fos.write(buffer, 0, count);
                             total += count;
