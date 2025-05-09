@@ -47,11 +47,11 @@ O projeto é composto por duas aplicações:
 
 ## Como Executar
 
-# 1. Abre o diretorio na IDE
+### 1. Abre o diretorio na IDE
 
-# 2. Rode as classes java com o metodo main implementado, no caso desse projeto as classes Cliente e Servidor.
+### 2. Rode as classes java com o metodo main implementado, no caso desse projeto as classes Cliente e Servidor.
 
-## OBS: Rode primeiro a classe servidor
+#### OBS: Rode primeiro a classe servidor
 
 
 
