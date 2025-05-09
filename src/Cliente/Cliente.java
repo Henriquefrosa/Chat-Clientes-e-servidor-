@@ -85,12 +85,12 @@ public class Cliente {
                 }
             }
         } catch (IOException e) {
-            System.out.println("🔌 Conexão encerrada.");
+            System.out.println(" Conexão encerrada.");
         }
     }
 
     private static void exibirAjuda() {
-        System.out.println("\n📋 Comandos disponíveis:");
+        System.out.println("\n Comandos disponíveis:");
         System.out.println("  /join <sala>                 → Entrar ou criar uma sala de chat");
         System.out.println("  /send room <mensagem>        → Enviar mensagem para a sala atual");
         System.out.println("  /send message <dest> <msg>   → Enviar mensagem privada");

@@ -21,7 +21,6 @@ class ClienteHandler extends Thread {
         try {
             entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
             saida = new PrintWriter(socket.getOutputStream(), true);
-            saida.println("Digite seu nome de usuário:");
             nome = entrada.readLine();
             Servidor.registrarCliente(nome, this);
             Servidor.entrarNaSala(salaAtual, this);
