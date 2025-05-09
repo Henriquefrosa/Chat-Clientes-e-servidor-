@@ -5,7 +5,8 @@ Projeto desenvolvido para a disciplina de **Programação em Dispositivos Móvei
 ## Integrantes do Grupo
 
 - Roger de Azevedo  
-- [Adicione aqui os demais nomes dos integrantes]
+- Henrique Francisco Rosa
+- Lucas Denoni Zanellato
 
 ## Descrição Geral
 
